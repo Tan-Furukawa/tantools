@@ -1,10 +1,12 @@
 #'plot array
 #'@export plot_array
-plot_array <- function(x =seq(iris$Sepal.Length),
+plot_array <- function(x = list(a = seq(iris$Sepal.Length),
+                                b = seq(iris$Sepal.Width),
+                                c = seq(iris$Petal.Length)),
                        y = list(a = iris$Sepal.Length,
                                 b = iris$Sepal.Width,
                                 c = iris$Petal.Length),
-                       xim = range(x),
+                       xlim = range(x),
                        ylim = range(y),
                        xlab = "x",
                        ylab = "y",
@@ -17,14 +19,14 @@ plot_array <- function(x =seq(iris$Sepal.Length),
 
 
 
-  plot(x,
+  plot(x[[1]],
        y[[1]],
        xlim = xlim,
        ylim = ylim,
        main = subtitle[1])
 
   for(i in 2:length(y)) {
-    plot(x,
+    plot(x[[i]],
          y[[i]],
          xlim = xlim,
          ylim = ylim,  axes = F,
@@ -34,7 +36,6 @@ plot_array <- function(x =seq(iris$Sepal.Length),
     axis(side = 1,  labels = T)
 
   }
-
 
   title(xlab = xlab,
         ylab = ylab,
@@ -46,5 +47,5 @@ plot_array <- function(x =seq(iris$Sepal.Length),
 }
 
 
-
+plot_array()
 
