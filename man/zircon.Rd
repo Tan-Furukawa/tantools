@@ -4,7 +4,9 @@
 \name{zircon}
 \alias{zircon}
 \title{world detrital zircons}
-\format{data.feame(no,age)}
+\format{
+data.feame(no,age)
+}
 \usage{
 zircon
 }
